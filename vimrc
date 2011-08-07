@@ -412,12 +412,19 @@ let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_min_syntax_length = 3
 
 "enable tab to complete anything
-imap <expr><Tab> pumvisible() ? "<C-n>" : neocomplcache#sources#snippets_complete#expandable() ? "<Plug>(neocomplcache_snippets_expand)" : "\<TAB>"
-imap <expr><S-Tab> pumvisible() ? "<C-p>" : "<S-Tab>"
-imap <CR>  <C-R>=CrEnd()<CR>
-function! CrEnd()
-  return pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
+imap <Tab> <C-R>=TabForward()<CR>
+imap <S-Tab> <C-R>=TabBackward()<CR>
+function! TabForward()
+    return neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 endfunction
+function! TabBackward()
+    return pumvisible() ? "\<C-p>" : "\<Tab>"
+endfunction
+
+"imap <CR>  <C-R>=CrEnd()<CR>
+"function! CrEnd()
+  "return pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
+"endfunction
 
 "enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
