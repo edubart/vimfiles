@@ -26,7 +26,7 @@ set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
 
 set wrap        "dont wrap lines
-set linebreak   "wrap lines at convenient points
+"set linebreak   "wrap lines at convenient points
 
 if v:version >= 703
     "undo settings
@@ -383,58 +383,30 @@ map <C-n> :cnext<CR>
 map <C-b> :cprevious<CR>
 
 " larger text width
-set textwidth=120
+"set textwidth=120
 
 "Command-T configuration
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
 
 "omnicpp configs
-"let OmniCpp_NamespaceSearch=1
-"let OmniCpp_GlobalScopeSearch=1
-"let OmniCpp_ShowAccess=1
-"let OmniCpp_ShowPrototypeInAbbr=1
-"let OmniCpp_MayCompleteDot=1
-"let OmniCpp_MayCompleteArrow=1
-"let OmniCpp_MayCompleteScope=1
-let OmniCpp_DefaultNamespaces=["std", "_GLIBCXX_STD"]
+let OmniCpp_NamespaceSearch=1
+let OmniCpp_GlobalScopeSearch=1
+let OmniCpp_ShowAccess=1
+let OmniCpp_ShowPrototypeInAbbr=1
+let OmniCpp_MayCompleteDot=1
+let OmniCpp_MayCompleteArrow=1
+let OmniCpp_MayCompleteScope=1
+"let OmniCpp_DefaultNamespaces=["std", "_GLIBCXX_STD"]
 
 "auto close omnicpp preview window
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-"neocomplcache settings
-let g:acp_enableAtStartup = 0
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_min_syntax_length = 3
-
-"enable tab to complete anything
-imap <Tab> <C-R>=TabForward()<CR>
-imap <S-Tab> <C-R>=TabBackward()<CR>
-function! TabForward()
-    return neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-endfunction
-function! TabBackward()
-    return pumvisible() ? "\<C-p>" : "\<Tab>"
-endfunction
-
-"imap <CR>  <C-R>=CrEnd()<CR>
-"function! CrEnd()
-  "return pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
-"endfunction
-
-"enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-    let g:neocomplcache_omni_patterns = {}
-endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'  
-
-"additional tags
 "set tags+=~/.vim/tags/cpp0x_stl
 "set tags+=~/.vim/tags/gl
 "set tags+=~/.vim/tags/lua
+
+"do not ask for local vimrc
+let g:localvimrc_ask = 0
+
