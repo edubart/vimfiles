@@ -410,3 +410,5 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 "do not ask for local vimrc
 let g:localvimrc_ask = 0
 
+map <F5> :make<CR>
+map <F6> :!./build/otclient<CR>

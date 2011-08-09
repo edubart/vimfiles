@@ -9,24 +9,22 @@ snippet readfile
 	}${3}
 # std::map
 snippet map
-	std::map<${1:key}, ${2:value}> map${3};
+	std::map<${1:key}, ${2:value}> ${3:mymap};
 # std::vector
 snippet vector
-	std::vector<${1:char}> v${2};
+	std::vector<${1:char}> ${2:myvec};
 # Namespace
 snippet namespace
 	namespace ${1:`Filename('', 'my')`} {
 		${2}
-	} /* $1 */
+	}
+
 # Class
 snippet class
 	class ${1:`Filename('$1', 'name')`} {
 	public:
-		$1(${2:arguments});
+		$1(${2});
 		virtual ~$1();
-
-	private:
-		${3:/* data */}
 	};
 snippet fori
 	for(int ${2:i} = 0;$2 < ${1:count};++$2) {
@@ -40,5 +38,14 @@ snippet fore
 	for(auto ${1:v} : ${2}) {
 		${3:/* code */}
 	}
-snippet str
-	std::string
+snippet enum
+	enum ${1:MyEnum} {
+		${2}
+	};
+snippet ifndef
+	#ifndef ${1:`toupper(Filename('$1', 'NAME'))`}_H
+	#define $1_H
+	${2}
+	#endif
+snippet inc
+	#include <${1:iostream}>${2}
