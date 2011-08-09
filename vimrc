@@ -407,8 +407,13 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 "set tags+=~/.vim/tags/gl
 "set tags+=~/.vim/tags/lua
 
+"automatically opens quickfix window on make errors
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
 "do not ask for local vimrc
 let g:localvimrc_ask = 0
 
 map <F5> :make<CR>
 map <F6> :!./build/otclient<CR>
+map <F4> :A<CR>
