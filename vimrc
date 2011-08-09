@@ -367,7 +367,7 @@ autocmd bufwritepost .vimrc source ~/.vimrc
 "allow switching windows while in insert mode
 imap <C-w> <Esc><C-w>
 
-"ctrl space for code completion
+"ctrl space for omni code completion
 imap <Nul> <C-X><C-O>
 imap <C-space> <C-X><C-O>
 
@@ -378,35 +378,23 @@ set guioptions-=T
 nmap <silent> <leader>s :set spell!<CR>
 set spelllang=en
 
-"key mapping for compile errors navigation
+"key mapping for quickfix navigation
 map <C-n> :cnext<CR>
 map <C-b> :cprevious<CR>
 
-" larger text width
+" allow larger text width
 "set textwidth=120
+
+"turn off preview menu for omni
+set completeopt=menu
 
 "Command-T configuration
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
 
-"omnicpp configs
-"let OmniCpp_NamespaceSearch=1
-"let OmniCpp_GlobalScopeSearch=1
-"let OmniCpp_ShowAccess=1
-"let OmniCpp_ShowPrototypeInAbbr=1
-"let OmniCpp_MayCompleteDot=1
-"let OmniCpp_MayCompleteArrow=1
-"let OmniCpp_MayCompleteScope=1
-"let OmniCpp_DefaultNamespaces=["std", "_GLIBCXX_STD"]
-
-"auto close omnicpp preview window
+"auto close preview window
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-
-"additional tags for C++ code completion
-"set tags+=~/.vim/tags/cpp0x_stl
-"set tags+=~/.vim/tags/gl
-"set tags+=~/.vim/tags/lua
 
 "automatically opens quickfix window on make errors
 autocmd QuickFixCmdPost [^l]* nested cwindow
