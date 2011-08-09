@@ -421,3 +421,16 @@ nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 "formatting style
 autocmd BufNewFile,BufRead *.cpp set formatprg=astyle\ -A8s4SOclk1
+
+
+if has("gui_running")
+    "remove right scroll bar
+    set guioptions-=r 
+
+    "remove menubar
+    "set guioptions-=m
+
+    colorscheme light
+
+    set guifont=Monospace\ 9
+endif

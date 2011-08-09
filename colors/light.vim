@@ -54,7 +54,7 @@ hi Normal       guifg=#323232   guibg=#ffffff
 hi Comment      guifg=#969696
 hi Constant     guifg=#000000                   gui=bold
 hi Special      guifg=#dc6816
-hi PreProc      guifg=#294a8c
+hi PreProc      guifg=#294aac
 hi Identifier   guifg=#3b4ac8                   gui=bold
 hi Statement    guifg=#000000                   gui=bold
 hi Type         guifg=#000000                   gui=bold
