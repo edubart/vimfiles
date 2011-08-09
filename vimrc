@@ -414,3 +414,10 @@ let g:clang_complete_auto = 0
 "supertab confs
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<C-X><C-O>"
+
+"usefull replacing macros
+nnoremap gr gd[{V%:s/<C-R>///gc<left><left><left>
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
+"formatting style
+autocmd BufNewFile,BufRead *.cpp set formatprg=astyle\ -A8s4SOclk1
