@@ -403,6 +403,7 @@ let OmniCpp_MayCompleteScope=1
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+"additional tags for C++ code completion
 "set tags+=~/.vim/tags/cpp0x_stl
 "set tags+=~/.vim/tags/gl
 "set tags+=~/.vim/tags/lua
@@ -417,3 +418,11 @@ let g:localvimrc_ask = 0
 map <F5> :make<CR>
 map <F6> :!./build/otclient<CR>
 map <F4> :A<CR>
+
+"clang confs
+let g:clang_snippets_engine="snipmate"
+let g:clang_complete_auto = 0
+
+"supertab confs
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<C-X><C-O>"
