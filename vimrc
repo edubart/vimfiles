@@ -390,13 +390,13 @@ let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
 
 "omnicpp configs
-let OmniCpp_NamespaceSearch=1
-let OmniCpp_GlobalScopeSearch=1
-let OmniCpp_ShowAccess=1
-let OmniCpp_ShowPrototypeInAbbr=1
-let OmniCpp_MayCompleteDot=1
-let OmniCpp_MayCompleteArrow=1
-let OmniCpp_MayCompleteScope=1
+"let OmniCpp_NamespaceSearch=1
+"let OmniCpp_GlobalScopeSearch=1
+"let OmniCpp_ShowAccess=1
+"let OmniCpp_ShowPrototypeInAbbr=1
+"let OmniCpp_MayCompleteDot=1
+"let OmniCpp_MayCompleteArrow=1
+"let OmniCpp_MayCompleteScope=1
 "let OmniCpp_DefaultNamespaces=["std", "_GLIBCXX_STD"]
 
 "auto close omnicpp preview window
