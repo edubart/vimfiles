@@ -416,6 +416,7 @@ let g:clang_use_library=1
 let g:clang_snippets_engine="snipmate"
 let g:clang_complete_auto = 0
 let g:clang_user_options = '-std=c++11'
+let g:clang_periodic_quickfix=1
 
 "supertab confs
 let g:SuperTabDefaultCompletionType = "context"
