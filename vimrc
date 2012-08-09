@@ -408,8 +408,10 @@ map <F6> :!./build/otclient<CR>
 map <F4> :A<CR>
 
 "clang confs
+let g:clang_use_library=1
 let g:clang_snippets_engine="snipmate"
 let g:clang_complete_auto = 0
+let g:clang_user_options = '-std=c++11'
 
 "supertab confs
 let g:SuperTabDefaultCompletionType = "context"
@@ -425,7 +427,7 @@ autocmd BufNewFile,BufRead *.cpp set formatprg=astyle\ -A8s4SOclk1
 
 if has("gui_running")
     "remove right scroll bar
-    set guioptions-=r 
+    set guioptions-=r
 
     "remove menubar
     "set guioptions-=m
