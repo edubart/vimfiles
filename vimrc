@@ -269,7 +269,7 @@ let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 40
 
 "explorer mappings
-nnoremap <f1> :BufExplorer<cr>
+nnoremap <f1> :BuffergatorToggle<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f3> :TlistToggle<cr>
 
@@ -406,6 +406,10 @@ let g:localvimrc_ask = 0
 map <F5> :make<CR>
 map <F6> :!./build/otclient<CR>
 map <F4> :A<CR>
+
+"buffergator
+let g:buffergator_viewport_split_policy="T"
+let g:buffergator_split_size=15
 
 "clang confs
 let g:clang_use_library=1
