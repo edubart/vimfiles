@@ -334,6 +334,7 @@ autocmd BufReadPost fugitive://*
 
 "set colorscheme
 colorscheme koehler
+"colorscheme default
 
 "make running commands less ugly
 set norestorescreen
@@ -418,6 +419,13 @@ let g:clang_complete_auto = 0
 let g:clang_user_options = '-std=c++11'
 let g:clang_periodic_quickfix=1
 
+"localvimrc
+let g:localvimrc_sandbox=0
+
+"more include paths for gf command
+set path+=/usr/include/c++/4.7.1
+au BufEnter /usr/include/c++/* setf cpp
+
 "supertab confs
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<C-X><C-O>"
@@ -437,7 +445,8 @@ if has("gui_running")
     "remove menubar
     "set guioptions-=m
 
-    colorscheme light
+    "light colorscheme
+    "colorscheme light
 
     set guifont=Monospace\ 9
 endif
