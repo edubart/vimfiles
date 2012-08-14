@@ -83,6 +83,7 @@ set encoding=utf-8
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 let g:syntastic_cpp_compiler_options = ' -std=c++0x'
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['cpp'] }
 
 "snipmate settings
 let g:snips_author = "Martin Grenfell"
@@ -173,15 +174,13 @@ set visualbell t_vb=
 set path+=/usr/include/c++/4.7.1
 
 "override make command for CMake projects
-autocmd vimenter * call s:SetupMake()
-function! s:SetupMake()
-  if filereadable("CMakeLists.txt")
-    if filereadable("./build/Makefile")
-      set makeprg=make\ -j8\ -C\ build
+function! Compile()
+    if filereadable("CMakeLists.txt") && filereadable("./build/Makefile")
+        set makeprg=make\ -j8\ -C\ build
     else
-      set makeprg=make\ -j8
+        set makeprg=make\ -j8
     endif
-  end
+    make
 endfunction
 
 "command for bulding local tags
@@ -231,9 +230,13 @@ autocmd QuickFixCmdPost    l* nested lwindow
 let g:localvimrc_sandbox=0
 let g:localvimrc_ask = 0
 
-map <F5> :make<CR>
+map <F5> :call Compile()<CR>
 map <F6> :!./build/otclient<CR>
 map <F4> :A<CR>
+
+"fix yaking conflict with ctrlp
+let g:yankring_replace_n_pkey = '<Char-172>'
+let g:yankring_replace_n_nkey = '<Char-174>'
 
 "buffergator
 let g:buffergator_viewport_split_policy="T"
@@ -244,6 +247,7 @@ let g:clang_use_library=1
 let g:clang_snippets_engine="snipmate"
 let g:clang_complete_auto = 0
 let g:clang_user_options='-std=c++11'
+let g:clang_complete_copen=1
 
 "treat std include files as cpp
 au BufEnter /usr/include/c++/* setf cpp
