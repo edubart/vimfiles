@@ -42,7 +42,7 @@ Git:
 
 C++:
 * [A](https://github.com/vim-scripts/a.vim) - Alternate between .h/.cpp headers quickly
-* [clang_complete](https://github.com/garbas/vim-snipmate) - Save snippets for any filetype
+* [clang_complete](https://github.com/garbas/vim-snipmate) - Auto complete for C/C++ using clang
 
 Ruby/Rails:
 * [ruby](https://github.com/vim-ruby/vim-ruby) - Ruby runtime
