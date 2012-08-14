@@ -87,18 +87,6 @@ let g:syntastic_cpp_compiler_options = ' -std=c++0x'
 "snipmate settings
 let g:snips_author = "Martin Grenfell"
 
-"taglist settings
-let Tlist_Compact_Format = 1
-let Tlist_Enable_Fold_Column = 0
-let Tlist_Exit_OnlyWindow = 0
-let Tlist_WinWidth = 35
-let tlist_php_settings = 'php;c:class;f:Functions'
-let Tlist_Use_Right_Window=1
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_Display_Tag_Scope = 1
-let Tlist_Process_File_Always = 1
-let Tlist_Show_One_File = 1
-
 "nerdtree settings
 let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 40
@@ -106,7 +94,7 @@ let g:NERDTreeWinSize = 40
 "explorer mappings
 nnoremap <f1> :BuffergatorToggle<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
-nnoremap <f3> :TlistToggle<cr>
+nnoremap <f3> :TagbarToggle<cr>
 
 "source project specific config files
 runtime! projects/**/*.vim
@@ -256,8 +244,6 @@ let g:clang_use_library=1
 let g:clang_snippets_engine="snipmate"
 let g:clang_complete_auto = 0
 let g:clang_user_options='-std=c++11'
-
-
 
 "treat std include files as cpp
 au BufEnter /usr/include/c++/* setf cpp

@@ -33,6 +33,7 @@
 * [powerline](https://github.com/Lokaltog/vim-powerline) - Awesome status line
 * [gist](https://github.com/mattn/gist-vim) - Gist commands
 * [matrix](https://github.com/mattn/gist-vim) - Matrix screensaver
+* [vimwiki](https://github.com/vim-scripts/vimwiki) - Personal wiki for vim
 
 C++:
 * [A](https://github.com/vim-scripts/a.vim) - Alternate between .h/.cpp headers quickly
