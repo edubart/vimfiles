@@ -36,6 +36,7 @@
 * [vimwiki](https://github.com/vim-scripts/vimwiki) - Personal wiki for vim
 * [easymotion](https://github.com/Lokaltog/vim-easymotion) - Quick navigation through motions
 * [yankring](https://github.com/vim-scripts/YankRing.vim) - Maintains a history of previous yanks
+* [gitv](https://github.com/gregsexton/gitv) - View git commit history like gitk
 
 C++:
 * [A](https://github.com/vim-scripts/a.vim) - Alternate between .h/.cpp headers quickly
