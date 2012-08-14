@@ -6,6 +6,7 @@
 
 ## Installed plugins
 
+* [pathogen](https://github.com/tpope/vim-pathogen/) - Manage vim plugins
 * [Buffergator](https://github.com/vim-scripts/Buffergator) - Visual buffer managment
 * [CtrlP](https://github.com/kien/ctrlp.vim) - Open files and buffers with lightning quick speed!
 * [Git](https://github.com/tpope/vim-git) - Vim Git runtime files
@@ -30,6 +31,8 @@
 * [taglist](https://github.com/vim-scripts/taglist.vim) - Navigate through current file tags
 * [unimpaired](https://github.com/tpope/vim-unimpaired) - Handy bracket mappings
 * [powerline](https://github.com/Lokaltog/vim-powerline) - Awesome status line
+* [gist](https://github.com/mattn/gist-vim) - Gist commands
+* [matrix](https://github.com/mattn/gist-vim) - Matrix screensaver
 
 C++:
 * [A](https://github.com/vim-scripts/a.vim) - Alternate between .h/.cpp headers quickly
