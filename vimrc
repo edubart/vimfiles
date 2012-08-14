@@ -231,7 +231,7 @@ let g:localvimrc_sandbox=0
 let g:localvimrc_ask = 0
 
 map <F5> :call Compile()<CR>
-map <F6> :!./build/otclient<CR>
+map <F6> :make run<CR>
 map <F4> :A<CR>
 
 "fix yaking conflict with ctrlp
