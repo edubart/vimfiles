@@ -273,4 +273,6 @@ if has("gui_running")
     set guifont=Monospace\ 9
 endif
 
+" use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
+cmap w!! %!sudo tee > /dev/null %
 

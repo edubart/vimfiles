@@ -34,6 +34,8 @@
 * [gist](https://github.com/mattn/gist-vim) - Gist commands
 * [matrix](https://github.com/mattn/gist-vim) - Matrix screensaver
 * [vimwiki](https://github.com/vim-scripts/vimwiki) - Personal wiki for vim
+* [easymotion](https://github.com/Lokaltog/vim-easymotion) - Quick navigation through motions
+* [yankring](https://github.com/vim-scripts/YankRing.vim) - Maintains a history of previous yanks
 
 C++:
 * [A](https://github.com/vim-scripts/a.vim) - Alternate between .h/.cpp headers quickly
