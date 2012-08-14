@@ -88,3 +88,6 @@
 [submodule "bundle/gist"]
 	path = bundle/gist
 	url = git://github.com/mattn/gist-vim.git
+[submodule "bundle/vimwiki"]
+	path = bundle/vimwiki
+	url = git://github.com/vim-scripts/vimwiki.git
