@@ -17,7 +17,7 @@
 * [Surround](https://github.com/vim-scripts/surround.vim) - Surround your text in love...or brackets, quotation marks, etc.
 * [CSApprox](https://github.com/godlygeek/csapprox) - Make gvim-only colorschemes work transparently in terminal vim
 * [IndexedSearch](https://github.com/vim-scripts/IndexedSearch) - Shows 'Nth match out of M' at every search
-* [snipMate](https://github.com/garbas/vim-snipmate) - Save snippets for any filetype
+* [ultisnips](https://github.com/SirVer/ultisnips) - Save snippets for any filetype
 * [delimiteMate](https://github.com/vim-scripts/delimitMate.vim) - Automatic closing of quotes, parenthesis, etc
 * [localvimrc](https://github.com/vim-scripts/localvimrc) - Load subdirectory specific vimrc files
 * [repeat](https://github.com/tpope/vim-repeat) - Improve .
@@ -42,7 +42,7 @@ Git:
 
 C++:
 * [A](https://github.com/vim-scripts/a.vim) - Alternate between .h/.cpp headers quickly
-* [clang_complete](https://github.com/garbas/vim-snipmate) - Auto complete for C/C++ using clang
+* [clang_complete](https://github.com/Rip-Rip/clang_complete) - Auto complete for C/C++ using clang
 
 Ruby/Rails:
 * [ruby](https://github.com/vim-ruby/vim-ruby) - Ruby runtime

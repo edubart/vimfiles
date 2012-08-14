@@ -2,6 +2,9 @@
 "This must be first, because it changes other options as a side effect.
 set nocompatible
 
+"fix loading of ftdetect scripts
+filetype off
+
 "activate pathogen
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -84,9 +87,6 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 let g:syntastic_cpp_compiler_options = ' -std=c++0x'
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['cpp'] }
-
-"snipmate settings
-let g:snips_author = "Martin Grenfell"
 
 "nerdtree settings
 let g:NERDTreeMouseMode = 2
@@ -242,9 +242,14 @@ let g:yankring_replace_n_nkey = '<Char-174>'
 let g:buffergator_viewport_split_policy="T"
 let g:buffergator_split_size=15
 
+"ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
 "clang confs
 let g:clang_use_library=1
-let g:clang_snippets_engine="snipmate"
+let g:clang_snippets_engine="ultisnips"
 let g:clang_complete_auto = 0
 let g:clang_user_options='-std=c++11'
 let g:clang_complete_copen=1
