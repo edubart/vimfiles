@@ -29,6 +29,7 @@
 * [tabular](https://github.com/godlygeek/tabular) - Help tabularizend texts
 * [taglist](https://github.com/vim-scripts/taglist.vim) - Navigate through current file tags
 * [unimpaired](https://github.com/tpope/vim-unimpaired) - Handy bracket mappings
+* [powerline](https://github.com/Lokaltog/vim-powerline) - Awesome status line
 
 C++:
 * [A](https://github.com/vim-scripts/a.vim) - Alternate between .h/.cpp headers quickly
