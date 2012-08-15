@@ -96,6 +96,7 @@ let g:NERDTreeWinSize = 40
 nnoremap <f1> :BuffergatorToggle<cr>
 nnoremap <f2> :NERDTreeToggle<cr>
 nnoremap <f3> :TagbarToggle<cr>
+nnoremap <f4> :GundoToggle<cr>
 
 "source project specific config files
 runtime! projects/**/*.vim
@@ -194,8 +195,8 @@ autocmd bufwritepost .vimrc source ~/.vimrc
 imap <C-w> <Esc><C-w>
 
 "ctrl space for omni code completion
-imap <Nul> <C-X><C-O>
-imap <C-space> <C-X><C-O>
+imap <Nul> <C-X><C-O><S-Tab>
+imap <C-space> <C-X><C-O><S-Tab>
 
 "turn off needless toolbar on gvim
 set guioptions-=T
@@ -232,7 +233,8 @@ let g:localvimrc_ask = 0
 
 map <F5> :call Compile()<CR>
 map <F6> :make run<CR>
-map <F4> :A<CR>
+
+map <C-S-c> :A<cr>
 
 "fix yaking conflict with ctrlp
 let g:yankring_replace_n_pkey = '<Char-172>'
@@ -250,8 +252,9 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 "clang confs
 let g:clang_use_library=1
 let g:clang_snippets_engine="ultisnips"
-let g:clang_complete_auto = 0
+let g:clang_complete_auto=1
 let g:clang_user_options='-std=c++11'
+let g:clang_auto_select=2
 let g:clang_complete_copen=1
 
 "treat std include files as cpp
@@ -279,7 +282,7 @@ if has("gui_running")
     "light colorscheme
     colorscheme light
 
-    set guifont=Monospace\ 9
+    set guifont=Monospace\ 8
 endif
 
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
