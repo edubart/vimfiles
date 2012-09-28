@@ -1,6 +1,6 @@
-[[##]] Installation
+## Installation
 
-    git clone git@github.com:edubart/vimfiles.git ~/.vim
+    git clone https://github.com/edubart/vimfiles.git ~/.vim
     cd .vim && git submodule init && git submodule update
     ln -s ~/.vim/vimrc ~/.vimrc
 
