@@ -254,7 +254,6 @@ let g:clang_use_library=1
 let g:clang_snippets_engine="ultisnips"
 let g:clang_complete_auto=1
 let g:clang_user_options='-std=c++11'
-let g:clang_auto_select=2
 let g:clang_complete_copen=1
 
 "treat std include files as cpp
@@ -279,8 +278,8 @@ if has("gui_running")
     "remove menubar
     "set guioptions-=m
 
-    "light colorscheme
-    colorscheme light
+    "the lovely github theme.
+    colorscheme github
 
     set guifont=Monospace\ 8
 endif
