@@ -278,8 +278,8 @@ if has("gui_running")
     "remove menubar
     "set guioptions-=m
 
-    "light colorscheme
-    colorscheme dark
+    "the lovely github theme.
+    colorscheme github
 
     set guifont=Monospace\ 8
 endif
