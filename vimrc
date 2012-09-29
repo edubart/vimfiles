@@ -157,10 +157,6 @@ autocmd BufReadPost fugitive://*
 "start my additions
 "
 
-"set colorscheme
-colorscheme koehler
-"colorscheme default
-
 "make running commands less ugly
 set norestorescreen
 set t_ti= t_te=
@@ -282,6 +278,8 @@ if has("gui_running")
     colorscheme github
 
     set guifont=Monospace\ 8
+else
+    colorscheme Tomorrow-Night-Bright
 endif
 
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
