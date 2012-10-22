@@ -285,3 +285,7 @@ endif
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
 cmap w!! %!sudo tee > /dev/null %
 
+" auto prepend license whenever the a new file is created.  (MIT by default).                        
+autocmd BufNewFile *                                                           
+\ 0r ~/.vim/mit_license.txt                                                    
+augroup END
