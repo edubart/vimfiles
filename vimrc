@@ -286,6 +286,6 @@ endif
 cmap w!! %!sudo tee > /dev/null %
 
 " auto prepend license whenever the a new file is created.  (MIT by default).                        
-utocmd BufNewFile *                                                           
+autocmd BufNewFile *                                                           
 \ 0r ~/.vim/mit_license.txt                                                    
 augroup END
