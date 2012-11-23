@@ -81,6 +81,7 @@ set hidden
 "always show statusline
 set laststatus=2
 set encoding=utf-8
+set spelllang=en
 
 "syntastic settings
 let g:syntastic_enable_signs=1
@@ -92,11 +93,6 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['cpp'] }
 let g:NERDTreeMouseMode = 2
 let g:NERDTreeWinSize = 40
 
-"explorer mappings
-nnoremap <f1> :BuffergatorToggle<cr>
-nnoremap <f2> :NERDTreeToggle<cr>
-nnoremap <f3> :TagbarToggle<cr>
-nnoremap <f4> :GundoToggle<cr>
 
 "source project specific config files
 runtime! projects/**/*.vim
@@ -106,15 +102,6 @@ if !has("gui")
     let g:CSApprox_loaded = 1
 endif
 
-"make <c-l> clear the highlight as well as redraw
-nnoremap <C-L> :nohls<CR><C-L>
-inoremap <C-L> <C-O>:nohls<CR>
-
-"map Q to something useful
-noremap Q gq
-
-"make Y consistent with C and D
-nnoremap Y y$
 
 "visual search mappings
 function! s:VSetSearch()
@@ -168,42 +155,31 @@ set nobackup
 set visualbell t_vb=
 
 "more include paths for gf command
-set path+=/usr/include/c++/4.7.1
+set path+=/usr/include/c++/4.7.2
 
 "override make command for CMake projects
-function! Compile()
+function! SetupMake()
     if filereadable("CMakeLists.txt") && filereadable("./build/Makefile")
         set makeprg=make\ -j8\ -C\ build
     else
         set makeprg=make\ -j8
     endif
+endfunction
+
+function! Compile()
+    call SetupMake()
     make
+endfunction
+
+function! Run()
+    call SetupMake()
+    make run
 endfunction
 
 "command for bulding local tags
 command! Ctags :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .
+command! Vreload :source ~/.vimrc
 
-"fast vimrc editing
-map <leader>v :e! ~/.vimrc<CR>
-autocmd bufwritepost .vimrc source ~/.vimrc
-
-"allow switching windows while in insert mode
-imap <C-w> <Esc><C-w>
-
-"ctrl space for omni code completion
-imap <Nul> <C-X><C-O><S-Tab>
-imap <C-space> <C-X><C-O><S-Tab>
-
-"turn off needless toolbar on gvim
-set guioptions-=T
-
-"toggle spell checking
-nmap <silent> <leader>s :set spell!<CR>
-set spelllang=en
-
-"key mapping for quickfix navigation
-map <C-n> :cnext<CR>
-map <C-b> :cprevious<CR>
 
 " allow larger text width
 "set textwidth=120
@@ -223,14 +199,13 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
+"auto reload vimrc when saving
+"autocmd BufWritePost .vimrc source ~/.vimrc
+
 "localvimrc
 let g:localvimrc_sandbox=0
 let g:localvimrc_ask = 0
 
-map <F5> :call Compile()<CR>
-map <F6> :make run<CR>
-
-map <C-S-c> :A<cr>
 
 "fix yaking conflict with ctrlp
 let g:yankring_replace_n_pkey = '<Char-172>'
@@ -252,24 +227,26 @@ let g:clang_complete_auto=1
 let g:clang_user_options='-std=c++11'
 let g:clang_complete_copen=1
 
+"ctrlp confs
+let g:ctrlp_follow_symlinks=1
+
 "treat std include files as cpp
 au BufEnter /usr/include/c++/* setf cpp
 
 "supertab confs
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<C-X><C-O>"
+"let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabContextDefaultCompletionType = "<C-X><C-O>"
 
-"usefull replacing macros
-nnoremap gr gd[{V%:s/<C-R>///gc<left><left><left>
-nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 "formatting style
 autocmd BufNewFile,BufRead *.cpp set formatprg=astyle\ -A8s4SOclk1
 
-
 if has("gui_running")
     "remove right scroll bar
     set guioptions-=r
+
+    "turn off needless toolbar on gvim
+    set guioptions-=T
 
     "remove menubar
     "set guioptions-=m
@@ -285,7 +262,45 @@ endif
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
 cmap w!! %!sudo tee > /dev/null %
 
-" auto prepend license whenever the a new file is created.  (MIT by default).                        
-autocmd BufNewFile *                                                           
-\ 0r ~/.vim/mit_license.txt                                                    
-augroup END
+"make <c-l> clear the highlight as well as redraw
+nnoremap <C-L> :nohls<CR><C-L>
+inoremap <C-L> <C-O>:nohls<CR>
+
+"map Q to something useful
+noremap Q gq
+
+"make Y consistent with C and D
+nnoremap Y y$
+
+"useful replacing macros
+nnoremap gr gd[{V%:s/<C-R>///gc<left><left><left>
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
+"explorer mappings
+nnoremap <f1> :BuffergatorToggle<cr>
+nnoremap <f2> :NERDTreeToggle<cr>
+nnoremap <f3> :TagbarToggle<cr>
+nnoremap <f4> :GundoToggle<cr>
+map <f5> :call Compile()<CR>
+map <f6> :call Run()<CR>
+
+"fast vimrc editing
+map <leader>v :e! ~/.vimrc<CR>
+
+"allow switching windows while in insert mode
+imap <C-w> <Esc><C-w>
+
+"ctrl space for omni code completion
+imap <Nul> <C-X><C-O><S-Tab>
+imap <C-space> <C-X><C-O><S-Tab>
+
+"toggle spell checking
+nmap <silent> <leader>s :set spell!<CR>
+
+"key mapping for quickfix navigation
+map <C-n> :cnext<CR>
+map <C-b> :cprevious<CR>
+map <leader>q :ccl<cr>
+
+map <C-S-c> :A<cr>
+
