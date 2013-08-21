@@ -84,10 +84,11 @@ set encoding=utf-8
 set spelllang=en
 
 "syntastic settings
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
-let g:syntastic_cpp_compiler_options = ' -std=c++0x'
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['cpp'] }
+"let g:syntastic_enable_signs=1
+"let g:syntastic_auto_loc_list=2
+"let g:syntastic_always_populate_loc_list=1
+"let g:syntastic_cpp_compiler_options = ' -std=c++11'
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['cpp'] }
 
 "nerdtree settings
 let g:NERDTreeMouseMode = 2
@@ -214,28 +215,26 @@ let g:yankring_replace_n_nkey = '<Char-174>'
 "buffergator
 let g:buffergator_viewport_split_policy="T"
 let g:buffergator_split_size=15
+let g:buffergator_sort_regime="mru"
 
 "ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
-"clang confs
-let g:clang_use_library=1
-let g:clang_snippets_engine="ultisnips"
-let g:clang_complete_auto=1
-let g:clang_user_options='-std=c++11'
-let g:clang_complete_copen=1
+"YouCompleteMe
+let g:ycm_confirm_extra_conf=0
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "ctrlp confs
 let g:ctrlp_follow_symlinks=1
 
+"easymotion
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade  Comment
+
 "treat std include files as cpp
 au BufEnter /usr/include/c++/* setf cpp
-
-"supertab confs
-"let g:SuperTabDefaultCompletionType = "context"
-"let g:SuperTabContextDefaultCompletionType = "<C-X><C-O>"
 
 
 "formatting style
@@ -289,10 +288,6 @@ map <leader>v :e! ~/.vimrc<CR>
 
 "allow switching windows while in insert mode
 imap <C-w> <Esc><C-w>
-
-"ctrl space for omni code completion
-imap <Nul> <C-X><C-O><S-Tab>
-imap <C-space> <C-X><C-O><S-Tab>
 
 "toggle spell checking
 nmap <silent> <leader>s :set spell!<CR>

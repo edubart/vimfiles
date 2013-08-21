@@ -13,7 +13,6 @@
 * [Gundo](https://github.com/sjl/gundo.vim) - Visualize undo tree
 * [NERDCommenter](https://github.com/scrooloose/nerdcommenter)- Comment your code like a pro.
 * [NERDTree](https://github.com/scrooloose/nerdtree)- Visual folder/file navigation
-* [SuperTab](https://github.com/ervandew/supertab) - Insert mode Tab completion!
 * [Surround](https://github.com/vim-scripts/surround.vim) - Surround your text in love...or brackets, quotation marks, etc.
 * [CSApprox](https://github.com/godlygeek/csapprox) - Make gvim-only colorschemes work transparently in terminal vim
 * [IndexedSearch](https://github.com/vim-scripts/IndexedSearch) - Shows 'Nth match out of M' at every search
@@ -39,10 +38,11 @@ Git:
 * [gist](https://github.com/mattn/gist-vim) - Gist commands
 * [gitv](https://github.com/gregsexton/gitv) - View git commit history like gitk
 * [Fugitive](https://github.com/tpope/vim-fugitive) - Exceptional Git intigration for Vim
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter) - Show changed lines while editing for git repositories
 
 C++:
 * [A](https://github.com/vim-scripts/a.vim) - Alternate between .h/.cpp headers quickly
-* [clang_complete](https://github.com/Rip-Rip/clang_complete) - Auto complete for C/C++ using clang
+* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe) - Code completion engine
 
 Ruby/Rails:
 * [ruby](https://github.com/vim-ruby/vim-ruby) - Ruby runtime
