@@ -251,9 +251,10 @@ if has("gui_running")
     "set guioptions-=m
 
     "the lovely github theme.
-    colorscheme github
+    "colorscheme github
+    colorscheme Tomorrow-Night-Bright
 
-    set guifont=Monospace\ 8
+    set guifont=Monospace\ 9
 else
     colorscheme Tomorrow-Night-Bright
 endif
@@ -299,3 +300,4 @@ map <leader>q :ccl<cr>
 
 map <C-S-c> :A<cr>
 
+map <C-s> :w<cr>
