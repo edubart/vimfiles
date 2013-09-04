@@ -233,6 +233,10 @@ let g:ctrlp_follow_symlinks=1
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
+"gutter
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
 "treat std include files as cpp
 au BufEnter /usr/include/c++/* setf cpp
 
