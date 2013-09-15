@@ -17,6 +17,7 @@ set history=1000
 
 set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
+set showmatch
 
 set number      "show line numbers
 
@@ -24,6 +25,8 @@ set number      "show line numbers
 set list
 set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
+set ttimeout
+set ttimeoutlen=50
 
 set incsearch   "find the next match as we type the search
 set hlsearch    "hilight searches by default
@@ -41,8 +44,10 @@ endif
 
 "default indent settings
 set shiftwidth=4
+set shiftround
 set softtabstop=4
 set expandtab
+set smarttab
 set autoindent
 
 "folding settings
@@ -84,11 +89,7 @@ set encoding=utf-8
 set spelllang=en
 
 "syntastic settings
-"let g:syntastic_enable_signs=1
-"let g:syntastic_auto_loc_list=2
-"let g:syntastic_always_populate_loc_list=1
-"let g:syntastic_cpp_compiler_options = ' -std=c++11'
-"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['cpp'] }
+"set updatetime=500 "parse after 500 ms of editing
 
 "nerdtree settings
 let g:NERDTreeMouseMode = 2
@@ -236,13 +237,17 @@ hi link EasyMotionShade  Comment
 "gutter
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
+let g:gitgutter_sign_column_always = 1
 
 "treat std include files as cpp
 au BufEnter /usr/include/c++/* setf cpp
 
-
 "formatting style
-autocmd BufNewFile,BufRead *.cpp set formatprg=astyle\ -A8s4SOclk1
+autocmd BufNewFile,BufRead *.cpp set formatprg=astyle\ -A1s4Sclk1
+autocmd BufNewFile,BufRead *.h set formatprg=astyle\ -A2s4SOclk1
+
+"auto remove trailing whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
 
 if has("gui_running")
     "remove right scroll bar
@@ -262,6 +267,9 @@ if has("gui_running")
 else
     colorscheme Tomorrow-Night-Bright
 endif
+
+"customize sign column
+highlight SignColumn ctermbg=black
 
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
 cmap w!! %!sudo tee > /dev/null %
@@ -299,9 +307,10 @@ nmap <silent> <leader>s :set spell!<CR>
 
 "key mapping for quickfix navigation
 map <C-n> :cnext<CR>
-map <C-b> :cprevious<CR>
+"map <C-b> :cprevious<CR>
 map <leader>q :ccl<cr>
 
-map <C-S-c> :A<cr>
-
 map <C-s> :w<cr>
+
+"clear highlight
+nnoremap <C-L> :nohlsearch<cr>

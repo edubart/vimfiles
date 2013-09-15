@@ -32,6 +32,7 @@
 * [vimwiki](https://github.com/vim-scripts/vimwiki) - Personal wiki for vim
 * [easymotion](https://github.com/Lokaltog/vim-easymotion) - Quick navigation through motions
 * [yankring](https://github.com/vim-scripts/YankRing.vim) - Maintains a history of previous yanks
+* [dispatch](https://github.com/tpope/vim-dispatch) - Asynchronious build and tasks
 
 Git:
 * [Git](https://github.com/tpope/vim-git) - Vim Git runtime files
