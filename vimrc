@@ -147,8 +147,11 @@ autocmd BufReadPost fugitive://*
 "
 
 "make running commands less ugly
-set norestorescreen
+"set norestorescreen
 set t_ti= t_te=
+
+"get return codes from make
+set shellpipe=2>&1\ \|\ tee\ %s;exit\ \${PIPESTATUS[0]}
 
 "disable backup since most stuff are in git
 set nobackup
