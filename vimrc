@@ -264,15 +264,17 @@ if has("gui_running")
 
     "the lovely github theme.
     "colorscheme github
-    colorscheme Tomorrow-Night-Bright
+    "colorscheme Tomorrow-Night-Bright
 
     set guifont=Monospace\ 9
 else
-    colorscheme Tomorrow-Night-Bright
+    "colorscheme Tomorrow-Night-Bright
 endif
 
+colorscheme koehler
+
 "customize sign column
-highlight SignColumn ctermbg=black
+au BufEnter * highlight SignColumn ctermbg=black
 
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
 cmap w!! %!sudo tee > /dev/null %
